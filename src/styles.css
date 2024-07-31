@@ -1,35 +1,44 @@
-/* General Styles */
-body, html {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000000;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f4f4f4;
 }
 
 .container {
     display: flex;
-    height: 100vh;
     flex-direction: row;
     flex: 1;
-    background-color: #838383;
-    padding: 20px;
 }
 
-/* Sidebar */
 .sidebar {
-    width: 250px;
+    width: 200px;
     background-color: #f1f1f1;
-    color: #333;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.2s;
 }
 
 .sidebar a {
-    color: #000000;
-    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 .sidebar a:hover {
-    text-decoration: underline;
+    background-color: #ddd;
+}
+
+.sidebar h2 {
+    margin-top: 0;
 }
 
 .sidebar ul {
@@ -37,18 +46,22 @@ body, html {
     padding: 0;
 }
 
-.sidebar ul li {
-    margin: 10px 0;
+.sidebar li {
+    padding: 10px 0;
 }
 
-/* Content */
+.sidebar li a {
+    text-decoration: none;
+    color: #333;
+}
+
 .content {
     flex: 1;
     padding: 20px;
+    overflow-y: auto;
     background-color: #fff;
 }
 
-/* Dashboard Styles */
 h1 {
     text-align: center;
     margin-top: 0;
@@ -60,34 +73,36 @@ h1 {
 }
 
 .status-box {
-    width: 22%;
+    width: 200px;
+    height: 100px;
+    background-color: #ddd;
+    margin: 20px;
     padding: 20px;
-    background-color: #e9e9e9;
-    border-radius: 5px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .status-box.total-packages {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     color: #fff;
 }
 
 .status-box.completed-builds {
-    background-color: #008CBA; /* Blue */
+    background-color: #008CBA;
     color: #fff;
 }
 
 .status-box.failed-builds {
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
     color: #fff;
 }
 
 .status-box.in-progress {
-    background-color: #ff9800; /* Orange */
+    background-color: #ff9800;
     color: #fff;
 }
 
-/* Recipe Page Styles */
 .details-container {
     background-color: #fff;
     padding: 30px;
@@ -105,8 +120,8 @@ input[type="text"] {
 }
 
 button {
-    background-color: #4CAF50; /* Dark Gray */
-    color: #fff;
+    background-color: #4CAF50;
+    color: white;
     padding: 10px 20px;
     margin: 10px 0;
     border: none;
@@ -115,10 +130,9 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Slightly lighter Gray */
+    background-color: #45a049;
 }
 
-/* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -132,15 +146,9 @@ th, td {
 }
 
 th {
-    background-color: #4b4b4b; /* Dark Gray */
-    color: white;
+    background-color: #f0f0f0;
 }
 
-thead {
-    background-color: #f2f2f2;
-}
-
-/* Legend Styles */
 .legend {
     display: flex;
     justify-content: space-around;
@@ -156,26 +164,25 @@ thead {
 }
 
 .all-good {
-    background-color: #005500; /* Dark Green */
+    background-color: #005500;
 }
 
 .failed {
-    background-color: #afaf00; /* Yellow */
+    background-color: #afaf00;
 }
 
 .jenkins-broken {
-    background-color: #b300b3; /* Purple */
+    background-color: #b300b3;
 }
 
 .broken {
-    background-color: #FF0000; /* Red */
+    background-color: #FF0000;
 }
 
 .job-not-run {
-    background-color: #FFFF00; /* Yellow */
+    background-color: #FFFF00;
 }
 
-/* Filter and Button Styles */
 .filter-container {
     display: flex;
     justify-content: space-between;
@@ -194,46 +201,17 @@ thead {
     margin-right: 5px;
 }
 
-/* Download and Parsing Button Styles */
 .download-links {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
 }
 
-.download-links button {
-    margin-left: 10px; /* Adds space between the buttons */
-}
-
-.filter-buttons {
-    margin-bottom: 20px; /* Adds space below filter buttons */
-}
-
-.filter-buttons button {
-    margin-right: 10px; /* Adds space between "Full View" and "Display Broken" buttons */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .content {
-        padding: 10px;
-    }
-
-    .status-container {
-        flex-direction: column;
-    }
-
-    .status-box {
-        width: 100%;
-        margin-bottom: 20px;
-    }
+.passing {
+    background-color: #00f048;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
 }

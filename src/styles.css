@@ -146,37 +146,49 @@ thead {
 /* Legend Styles */
 .legend {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start; /* Align buttons to the start */
     margin-top: 20px;
 }
 
 .legend-item {
-    padding: 8px;
+    padding: 8px 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+    background-color: #505050; /* Default background color for buttons */
+    margin-right: 0; /* Remove right margin to eliminate gap */
+}
+
+.legend-item:last-child {
+    margin-right: 0; /* Ensure no margin on the last button */
 }
 
 .all-good {
     background-color: #005500; /* Dark Green */
+    color: #fff;
 }
 
 .failed {
     background-color: #afaf00; /* Yellow */
+    color: #fff;
 }
 
 .jenkins-broken {
     background-color: #b300b3; /* Purple */
+    color: #fff;
 }
 
 .broken {
     background-color: #FF0000; /* Red */
+    color: #fff;
 }
 
 .job-not-run {
     background-color: #FFFF00; /* Yellow */
+    color: #000; /* Black text for visibility */
 }
+
 
 /* Filter and Button Styles */
 
